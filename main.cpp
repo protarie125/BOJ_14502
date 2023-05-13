@@ -18,8 +18,6 @@ using qii = queue<pii>;
 
 int n, m;
 vvi f;
-vii slot;
-int slotsz;
 int ans;
 
 const auto& dx = vi{ -1,1,0,0 };
@@ -100,7 +98,6 @@ int main() {
 	std::cin.tie(nullptr);
 
 	cin >> n >> m;
-	slot.reserve(n * m);
 	f = vvi(n, vi(m, 0));
 	for (auto i = 0; i < n; ++i) {
 		for (auto j = 0; j < m; ++j) {
@@ -108,7 +105,6 @@ int main() {
 		}
 	}
 
-	slotsz = static_cast<int>(slot.size());
 	ans = 0;
 	solve(0);
 	cout << ans;
